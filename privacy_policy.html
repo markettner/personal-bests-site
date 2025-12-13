@@ -5,17 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - Personal Bests</title>
-    <meta name="description" content="Privacy Policy for Personal Bests - Your data stays on your device.">
+    <meta name="description" content="Privacy Policy for Personal Bests app. We do not collect any user data.">
     <style>
-        :root {
-            --bg-primary: #0a0a0a;
-            --bg-secondary: #141414;
-            --text-primary: #ffffff;
-            --text-secondary: #a1a1aa;
-            --accent: #3b82f6;
-            --border: #27272a;
-        }
-
         * {
             margin: 0;
             padding: 0;
@@ -23,185 +14,220 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            line-height: 1.7;
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
             min-height: 100vh;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: #ffffff;
+            padding: 2rem;
+            line-height: 1.7;
         }
 
         .container {
-            max-width: 720px;
+            max-width: 700px;
             margin: 0 auto;
-            padding: 60px 24px;
+            animation: fadeIn 0.8s ease-out;
         }
 
-        header {
-            text-align: center;
-            margin-bottom: 48px;
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        .app-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, var(--accent), #8b5cf6);
-            border-radius: 18px;
-            margin: 0 auto 24px;
-            display: flex;
+        .back-link {
+            display: inline-flex;
             align-items: center;
-            justify-content: center;
-            font-size: 36px;
+            gap: 0.5rem;
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            border: 1px solid transparent;
+        }
+
+        .back-link:hover {
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
         }
 
         h1 {
             font-size: 2.5rem;
             font-weight: 700;
-            margin-bottom: 8px;
-            background: linear-gradient(135deg, var(--text-primary), var(--text-secondary));
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #ffd700 0%, #ff6b6b 50%, #ee5a24 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
-        .subtitle {
-            color: var(--text-secondary);
-            font-size: 1.1rem;
+        .last-updated {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+            margin-bottom: 2.5rem;
         }
 
-        .card {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border);
+        .policy-card {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
             border-radius: 16px;
-            padding: 32px;
-            margin-bottom: 24px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .highlight-card {
-            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1));
-            border-color: rgba(59, 130, 246, 0.3);
-        }
-
-        h2 {
-            font-size: 1.25rem;
+        .policy-card h2 {
+            font-size: 1.3rem;
             font-weight: 600;
-            margin-bottom: 16px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
+            margin-bottom: 1rem;
+            color: #ffd700;
         }
 
-        h2 .icon {
-            font-size: 1.5rem;
+        .policy-card p {
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 1rem;
         }
 
-        p {
-            color: var(--text-secondary);
-            margin-bottom: 12px;
-        }
-
-        p:last-child {
+        .policy-card p:last-child {
             margin-bottom: 0;
         }
 
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(0, 200, 83, 0.2) 0%, rgba(0, 150, 136, 0.2) 100%);
+            border: 1px solid rgba(0, 200, 83, 0.3);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .highlight-box .icon {
+            font-size: 2rem;
+            flex-shrink: 0;
+        }
+
+        .highlight-box .content h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #00c853;
+        }
+
+        .highlight-box .content p {
+            color: rgba(255, 255, 255, 0.85);
+            margin: 0;
+        }
+
         ul {
-            color: var(--text-secondary);
-            padding-left: 24px;
-            margin-top: 12px;
+            list-style: none;
+            padding: 0;
         }
 
-        li {
-            margin-bottom: 8px;
+        ul li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: rgba(255, 255, 255, 0.85);
         }
 
-        .badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            background: rgba(34, 197, 94, 0.15);
-            color: #22c55e;
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 0.875rem;
-            font-weight: 500;
-            margin-top: 16px;
+        ul li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #00c853;
+            font-weight: bold;
         }
 
-        footer {
+        .contact-section {
             text-align: center;
-            margin-top: 48px;
-            padding-top: 24px;
-            border-top: 1px solid var(--border);
-            color: var(--text-secondary);
-            font-size: 0.875rem;
+            padding-top: 1rem;
         }
 
-        .last-updated {
-            color: var(--text-secondary);
-            font-size: 0.875rem;
-            margin-top: 8px;
+        .contact-section p {
+            color: rgba(255, 255, 255, 0.6);
         }
 
-        @media (max-width: 480px) {
-            .container {
-                padding: 40px 16px;
-            }
+        .contact-section a {
+            color: #ffd700;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
 
-            h1 {
-                font-size: 2rem;
-            }
-
-            .card {
-                padding: 24px;
-            }
+        .contact-section a:hover {
+            color: #ffeb3b;
         }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <header>
-            <div class="app-icon">📊</div>
-            <h1>Privacy Policy</h1>
-            <p class="subtitle">Personal Bests</p>
-        </header>
+        <a href="index.html" class="back-link">← Back to Home</a>
 
-        <div class="card highlight-card">
-            <h2><span class="icon">🔒</span> Your Privacy Matters</h2>
-            <p><strong>Personal Bests does not collect, store, or transmit any personal data.</strong></p>
-            <p>All data processing happens entirely on your device. Your health and fitness data never leaves your
-                iPhone.</p>
-            <span class="badge">✓ 100% On-Device Processing</span>
+        <h1>Privacy Policy</h1>
+        <p class="last-updated">Last updated: December 13, 2024</p>
+
+        <div class="highlight-box">
+            <div class="icon">🔒</div>
+            <div class="content">
+                <h3>Your Privacy is Protected</h3>
+                <p>Personal Bests does not collect, store, or transmit any personal data. All processing happens
+                    entirely on your device.</p>
+            </div>
         </div>
 
-        <div class="card">
-            <h2><span class="icon">📱</span> Data Processing</h2>
-            <p>Personal Bests accesses your workout data from Apple HealthKit solely to convert it into FIT file format.
-                This processing occurs entirely on your device:</p>
+        <div class="policy-card">
+            <h2>Data Collection</h2>
+            <p>Personal Bests does <strong>not</strong> collect any data from its users. We have designed our app with
+                privacy as a core principle.</p>
             <ul>
+                <li>No personal information is collected</li>
+                <li>No usage analytics or tracking</li>
                 <li>No data is sent to external servers</li>
-                <li>No data is stored outside of your device</li>
-                <li>No analytics or tracking is implemented</li>
-                <li>No third-party services receive your data</li>
+                <li>No third-party services have access to your data</li>
             </ul>
         </div>
 
-        <div class="card">
-            <h2><span class="icon">🏥</span> HealthKit Data</h2>
-            <p>The app requests read access to your HealthKit workout data. This access is used exclusively to enable
-                you to export your workouts as FIT files. The data is processed locally and the resulting files are
-                saved to a location of your choosing on your device.</p>
+        <div class="policy-card">
+            <h2>On-Device Processing</h2>
+            <p>All data processing within Personal Bests occurs entirely on your device. Your workout data from Apple
+                Health stays on your device and is never transmitted elsewhere.</p>
+            <p>The app only reads workout data from Apple HealthKit with your explicit permission to display your
+                personal records. This data is processed locally and is never stored outside of the standard system
+                frameworks.</p>
         </div>
 
-        <div class="card">
-            <h2><span class="icon">📧</span> Contact</h2>
-            <p>If you have any questions about this privacy policy, please contact us at:</p>
-            <p><strong>markus.kettner@icloud.com</strong></p>
+        <div class="policy-card">
+            <h2>Apple HealthKit</h2>
+            <p>Personal Bests integrates with Apple HealthKit to access your workout data. This integration is governed
+                by Apple's strict privacy guidelines:</p>
+            <ul>
+                <li>You control which data the app can access</li>
+                <li>HealthKit data is encrypted and protected by iOS</li>
+                <li>We only read data; we never write to HealthKit</li>
+                <li>Access can be revoked at any time in Settings</li>
+            </ul>
         </div>
 
-        <footer>
-            <p>© 2024 Personal Bests. All rights reserved.</p>
-            <p class="last-updated">Last updated: December 2024</p>
-        </footer>
+        <div class="policy-card">
+            <h2>Changes to This Policy</h2>
+            <p>We may update this Privacy Policy from time to time. Any changes will be reflected on this page with an
+                updated revision date. Our commitment to not collecting user data will remain unchanged.</p>
+        </div>
+
+        <div class="policy-card contact-section">
+            <p>If you have any questions about this Privacy Policy, please contact us.</p>
+        </div>
     </div>
 </body>
 
