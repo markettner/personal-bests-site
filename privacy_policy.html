@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Personal Bests</title>
+    <meta name="description" content="Privacy Policy for Personal Bests - Your data stays on your device.">
+    <style>
+        :root {
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #141414;
+            --text-primary: #ffffff;
+            --text-secondary: #a1a1aa;
+            --accent: #3b82f6;
+            --border: #27272a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 60px 24px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .app-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--accent), #8b5cf6);
+            border-radius: 18px;
+            margin: 0 auto 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, var(--text-primary), var(--text-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        .card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 24px;
+        }
+
+        .highlight-card {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1));
+            border-color: rgba(59, 130, 246, 0.3);
+        }
+
+        h2 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h2 .icon {
+            font-size: 1.5rem;
+        }
+
+        p {
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+        }
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+
+        ul {
+            color: var(--text-secondary);
+            padding-left: 24px;
+            margin-top: 12px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(34, 197, 94, 0.15);
+            color: #22c55e;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-top: 16px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 48px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+        }
+
+        .last-updated {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            margin-top: 8px;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 40px 16px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .card {
+                padding: 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="app-icon">📊</div>
+            <h1>Privacy Policy</h1>
+            <p class="subtitle">Personal Bests</p>
+        </header>
+
+        <div class="card highlight-card">
+            <h2><span class="icon">🔒</span> Your Privacy Matters</h2>
+            <p><strong>Personal Bests does not collect, store, or transmit any personal data.</strong></p>
+            <p>All data processing happens entirely on your device. Your health and fitness data never leaves your
+                iPhone.</p>
+            <span class="badge">✓ 100% On-Device Processing</span>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📱</span> Data Processing</h2>
+            <p>Personal Bests accesses your workout data from Apple HealthKit solely to convert it into FIT file format.
+                This processing occurs entirely on your device:</p>
+            <ul>
+                <li>No data is sent to external servers</li>
+                <li>No data is stored outside of your device</li>
+                <li>No analytics or tracking is implemented</li>
+                <li>No third-party services receive your data</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🏥</span> HealthKit Data</h2>
+            <p>The app requests read access to your HealthKit workout data. This access is used exclusively to enable
+                you to export your workouts as FIT files. The data is processed locally and the resulting files are
+                saved to a location of your choosing on your device.</p>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📧</span> Contact</h2>
+            <p>If you have any questions about this privacy policy, please contact us at:</p>
+            <p><strong>markus.kettner@icloud.com</strong></p>
+        </div>
+
+        <footer>
+            <p>© 2024 Personal Bests. All rights reserved.</p>
+            <p class="last-updated">Last updated: December 2024</p>
+        </footer>
+    </div>
+</body>
+
+</html>
