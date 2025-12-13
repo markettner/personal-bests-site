@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Bests - Track Your Fitness Achievements</title>
-    <meta name="description" content="Personal Bests helps you track and celebrate your fitness achievements. All data is processed on-device for complete privacy.">
+    <title>Personal Bests - Discover Your Fastest Efforts</title>
+    <meta name="description"
+        content="Personal Bests helps you discover your fastest efforts hidden inside your workouts. All data is processed on-device for complete privacy.">
+    <link rel="icon" type="image/png" href="icon.png">
+    <link rel="apple-touch-icon" href="icon.png">
     <style>
         * {
             margin: 0;
@@ -35,25 +39,31 @@
                 opacity: 0;
                 transform: translateY(20px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
 
-        .icon {
-            font-size: 5rem;
+        .app-icon {
+            width: 120px;
+            height: 120px;
+            border-radius: 24px;
             margin-bottom: 1.5rem;
-            display: inline-block;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
             animation: pulse 2s ease-in-out infinite;
         }
 
         @keyframes pulse {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: scale(1);
             }
+
             50% {
-                transform: scale(1.05);
+                transform: scale(1.03);
             }
         }
 
@@ -128,12 +138,13 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container">
-        <div class="icon">🏆</div>
+        <img src="icon.png" alt="Personal Bests App Icon" class="app-icon">
         <h1>Personal Bests</h1>
-        <p class="tagline">Track and celebrate your fitness achievements. See your all-time personal records across all your workouts.</p>
-        
+        <p class="tagline">Personal Bests helps you discover your fastest efforts hidden inside your workouts.</p>
+
         <div class="features">
             <span class="feature">🏃 All Workout Types</span>
             <span class="feature">📊 Personal Records</span>
@@ -147,7 +158,8 @@
     </div>
 
     <footer>
-        © 2024 Personal Bests
+        © 2025 Markus Kettner
     </footer>
 </body>
+
 </html>
