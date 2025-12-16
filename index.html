@@ -130,6 +130,21 @@
             border-color: rgba(255, 255, 255, 0.4);
         }
 
+        .app-store-badge {
+            display: inline-block;
+            transition: transform 0.2s ease, opacity 0.2s ease;
+        }
+
+        .app-store-badge:hover {
+            transform: scale(1.05);
+            opacity: 0.9;
+        }
+
+        .app-store-badge img {
+            height: 50px;
+            width: auto;
+        }
+
         footer {
             position: fixed;
             bottom: 1.5rem;
@@ -151,6 +166,11 @@
             <span class="feature">🔒 Privacy First</span>
             <span class="feature">⚡ On-Device Processing</span>
         </div>
+
+        <a href="https://apps.apple.com/us/app/personal-bests/id6756506641" class="app-store-badge" target="_blank"
+            rel="noopener noreferrer">
+            <img src="app-store-badge.svg" alt="Download on the App Store">
+        </a>
 
         <div class="links">
             <a href="privacy_policy.html" class="privacy-link">Privacy Policy</a>
