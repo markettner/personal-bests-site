@@ -7,6 +7,25 @@
     <title>Personal Bests - Discover Your Fastest Efforts</title>
     <meta name="description"
         content="Personal Bests helps you discover your fastest efforts hidden inside your workouts. All data is processed on-device for complete privacy.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pb.kettner.berlin/">
+    <meta property="og:title" content="Personal Bests - Discover Your Fastest Efforts">
+    <meta property="og:description"
+        content="Personal Bests helps you discover your fastest efforts hidden inside your workouts. All data is processed on-device for complete privacy.">
+    <meta property="og:image" content="https://pb.kettner.berlin/personal_bests_1200x630.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Personal Bests">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Personal Bests - Discover Your Fastest Efforts">
+    <meta name="twitter:description"
+        content="Personal Bests helps you discover your fastest efforts hidden inside your workouts. All data is processed on-device for complete privacy.">
+    <meta name="twitter:image" content="https://pb.kettner.berlin/personal_bests_1200x630.png">
+
     <link rel="icon" type="image/png" href="icon.png">
     <link rel="apple-touch-icon" href="icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -140,13 +159,46 @@
         }
 
         .app-store-badge:hover {
-            transform: scale(1.05);
+            transform: translateY(-2px);
             opacity: 0.9;
         }
 
         .app-store-badge img {
-            height: 50px;
+            height: 54px;
             width: auto;
+        }
+
+        .feature-cards {
+            display: grid;
+            gap: 1rem;
+            text-align: left;
+            margin: 0.5rem 0 2.5rem;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.06);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 1.4rem 1.5rem;
+        }
+
+        .feature-card .emoji {
+            font-size: 1.6rem;
+            line-height: 1;
+        }
+
+        .feature-card h3 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin: 0.7rem 0 0.35rem;
+            color: #ffd700;
+        }
+
+        .feature-card p {
+            color: rgba(255, 255, 255, 0.82);
+            font-size: 0.98rem;
+            line-height: 1.6;
         }
 
         footer {
@@ -174,6 +226,30 @@
             rel="noopener noreferrer">
             <img src="app-store-badge.svg" alt="Download on the App Store">
         </a>
+
+        <div class="feature-cards">
+            <div class="feature-card">
+                <div class="emoji">🔍</div>
+                <h3>Finds efforts you never logged</h3>
+                <p>Most apps only show totals. Personal Bests scans every workout in Apple Health
+                    and uncovers your fastest segment of any length — even a blazing 1-mile buried
+                    in the middle of a long run.</p>
+            </div>
+            <div class="feature-card">
+                <div class="emoji">🏅</div>
+                <h3>Rank any distance, any timeframe</h3>
+                <p>Track exactly the distances you care about — 400m, 5K, marathon, anything — across
+                    running, cycling, swimming, rowing and more. See where each effort ranks all-time,
+                    this year, or over a custom window.</p>
+            </div>
+            <div class="feature-card">
+                <div class="emoji">🔒</div>
+                <h3>Private, and everywhere you train</h3>
+                <p>On iPhone, iPad and Mac with Home Screen widgets and personal-best notifications.
+                    Analysis runs on-device and syncs through your own iCloud — no third-party
+                    accounts, ever.</p>
+            </div>
+        </div>
 
         <div class="links">
             <a href="privacy_policy.html" class="privacy-link">Privacy Policy</a>
