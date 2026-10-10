@@ -5,235 +5,106 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - Personal Bests</title>
-    <meta name="description" content="Privacy Policy for Personal Bests app. We do not collect any user data.">
+    <meta name="description" content="Privacy Policy for the Personal Bests app. No account, no analytics, no tracking: your workouts are analysed on your device and synced only through your own iCloud.">
+
     <link rel="icon" type="image/png" href="icon.png">
     <link rel="apple-touch-icon" href="icon.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Lexend', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-            min-height: 100vh;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-            color: #ffffff;
-            padding: 2rem;
-            line-height: 1.7;
-        }
-
-        .container {
-            max-width: 700px;
-            margin: 0 auto;
-            animation: fadeIn 0.8s ease-out;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: rgba(255, 255, 255, 0.7);
-            text-decoration: none;
-            font-size: 0.95rem;
-            margin-bottom: 2rem;
-            padding: 0.5rem 1rem;
-            border-radius: 8px;
-            transition: all 0.2s ease;
-            border: 1px solid transparent;
-        }
-
-        .back-link:hover {
-            color: #ffffff;
-            background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(255, 255, 255, 0.2);
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            background: linear-gradient(135deg, #ffd700 0%, #ff6b6b 50%, #ee5a24 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .last-updated {
-            color: rgba(255, 255, 255, 0.5);
-            font-size: 0.9rem;
-            margin-bottom: 2.5rem;
-        }
-
-        .policy-card {
-            background: rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(10px);
-            border-radius: 16px;
-            padding: 2rem;
-            margin-bottom: 1.5rem;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .policy-card h2 {
-            font-size: 1.3rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: #ffd700;
-        }
-
-        .policy-card p {
-            color: rgba(255, 255, 255, 0.85);
-            margin-bottom: 1rem;
-        }
-
-        .policy-card p:last-child {
-            margin-bottom: 0;
-        }
-
-        .highlight-box {
-            background: linear-gradient(135deg, rgba(0, 200, 83, 0.2) 0%, rgba(0, 150, 136, 0.2) 100%);
-            border: 1px solid rgba(0, 200, 83, 0.3);
-            border-radius: 12px;
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-        }
-
-        .highlight-box .icon {
-            font-size: 2rem;
-            flex-shrink: 0;
-        }
-
-        .highlight-box .content h3 {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: #00c853;
-        }
-
-        .highlight-box .content p {
-            color: rgba(255, 255, 255, 0.85);
-            margin: 0;
-        }
-
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        ul li {
-            position: relative;
-            padding-left: 1.5rem;
-            margin-bottom: 0.75rem;
-            color: rgba(255, 255, 255, 0.85);
-        }
-
-        ul li::before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: #00c853;
-            font-weight: bold;
-        }
-
-        .contact-section {
-            text-align: center;
-            padding-top: 1rem;
-        }
-
-        .contact-section p {
-            color: rgba(255, 255, 255, 0.6);
-        }
-
-        .contact-section a {
-            color: #ffd700;
-            text-decoration: none;
-            transition: color 0.2s ease;
-        }
-
-        .contact-section a:hover {
-            color: #ffeb3b;
-        }
-    </style>
+    <link rel="preload" href="fonts/lexend-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <div class="container">
-        <a href="index.html" class="back-link">← Back to Home</a>
+    <header class="wrap site-header">
+        <a href="index.html" class="brand">
+            <img src="icon.png" alt="" width="40" height="40">
+            Personal Bests
+        </a>
+        <nav class="site-nav" aria-label="Main">
+            <a href="index.html">Overview</a>
+            <a href="features.html">Features</a>
+            <a href="support.html">Support</a>
+            <a href="https://apps.apple.com/us/app/personal-bests/id6756506641" class="nav-cta" target="_blank" rel="noopener noreferrer">Get the app</a>
+        </nav>
+    </header>
 
-        <h1>Privacy Policy</h1>
-        <p class="last-updated">Last updated: December 13, 2025</p>
+    <main class="wrap-narrow text-page">
+        <header class="text-header">
+            <div class="kicker">Privacy Policy</div>
+            <h1>Your workouts stay <span class="gradient-text nowrap">yours.</span></h1>
+            <p class="lead">Personal Bests has no servers, no accounts and no analytics. Your workouts are analysed on your device, and the results are stored only on your devices and in your own iCloud, which you can switch off.</p>
+            <p class="text-meta">Last updated: 10 October 2026</p>
+        </header>
 
-        <div class="highlight-box">
-            <div class="icon">🔒</div>
-            <div class="content">
-                <h3>Your Privacy is Protected</h3>
-                <p>Personal Bests does not collect, store, or transmit any personal data. All processing happens
-                    entirely on your device.</p>
-            </div>
-        </div>
+        <ul class="checklist" aria-label="At a glance">
+            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffd700" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg><span>No account and nothing to sign up for</span></li>
+            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffd700" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg><span>No analytics, no ads, no tracking</span></li>
+            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffd700" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg><span>Everything is analysed on your device, including AI-written summaries</span></li>
+            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffd700" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg><span>Read-only access to Apple Health: nothing is ever written or deleted there</span></li>
+            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffd700" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg><span>Optional sync through your own private iCloud, which I can’t access</span></li>
+        </ul>
 
-        <div class="policy-card">
-            <h2>Data Collection</h2>
-            <p>Personal Bests does <strong>not</strong> collect any data from its users. We have designed our app with
-                privacy as a core principle.</p>
+        <section class="prose-card" id="health">
+            <h2>What the app reads from Apple Health</h2>
+            <p>With your permission, Personal Bests reads:</p>
             <ul>
-                <li>No personal information is collected</li>
-                <li>No usage analytics or tracking</li>
-                <li>No data is sent to external servers</li>
-                <li>No third-party services have access to your data</li>
+                <li>your workouts: their type, date, duration and distance</li>
+                <li>their GPS routes, to calculate segments and draw maps</li>
+                <li>the distance recorded during them (walking and running, cycling, swimming and wheelchair distance)</li>
             </ul>
-        </div>
+            <p>You choose what to allow when the app asks, and you can change it at any time in Settings → Privacy &amp; Security → Health → Personal Bests. The app never writes to or deletes anything in Apple Health, and your Health data is never used for advertising or shared with anyone.</p>
+        </section>
 
-        <div class="policy-card">
-            <h2>On-Device Processing</h2>
-            <p>All data processing within Personal Bests occurs entirely on your device. Your workout data from Apple
-                Health stays on your device and is never transmitted elsewhere.</p>
-            <p>The app only reads workout data from Apple HealthKit with your explicit permission to display your
-                personal records. This data is processed locally and is never stored outside of the standard system
-                frameworks.</p>
-        </div>
+        <section class="prose-card" id="on-device">
+            <h2>What stays on your device</h2>
+            <p>Everything Personal Bests works out — segment times, rankings and medals — is calculated on your iPhone and stored there. GPS routes and maps are read from Apple Health when you open a workout and never leave your iPhone, not even through iCloud.</p>
+            <p>Notifications about new personal bests are created on your iPhone. Widgets read their data from storage shared between the app and its widgets on the same device.</p>
+        </section>
 
-        <div class="policy-card">
-            <h2>Apple HealthKit</h2>
-            <p>Personal Bests integrates with Apple HealthKit to access your workout data. This integration is governed
-                by Apple's strict privacy guidelines:</p>
+        <section class="prose-card" id="icloud">
+            <h2>iCloud sync and backup</h2>
+            <p>While iCloud sync is on (it is by default), Personal Bests keeps a copy of its results in the private iCloud database of your Apple Account. That copy lets you restore your data after reinstalling or on a new iPhone, and shows your results on your iPad and Mac. It contains:</p>
             <ul>
-                <li>You control which data the app can access</li>
-                <li>HealthKit data is encrypted and protected by iOS</li>
-                <li>We only read data; we never write to HealthKit</li>
-                <li>Access can be revoked at any time in Settings</li>
+                <li>a summary of each workout: its type, start time and time zone, duration, distance, and whether it took place indoors, outdoors or in a pool</li>
+                <li>your segment times, rankings and medals</li>
+                <li>your settings, including your segments, timeframes, crops and hidden workouts</li>
+                <li>the name of the device that made the most recent backup</li>
             </ul>
-        </div>
+            <p>It doesn’t contain GPS routes, locations or any other Health data.</p>
+            <p>Apple stores this data under <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener noreferrer">Apple’s Privacy Policy</a>. Because it’s in your private database, only you can access it; I can’t see it.</p>
+            <p>To stop syncing, open Settings → iCloud Sync in the app on your iPhone and turn off <strong>Sync to iCloud</strong>. This also deletes the copy from iCloud. Data on your iPhone and in Apple Health isn’t affected.</p>
+        </section>
 
-        <div class="policy-card">
-            <h2>Changes to This Policy</h2>
-            <p>We may update this Privacy Policy from time to time. Any changes will be reflected on this page with an
-                updated revision date. Our commitment to not collecting user data will remain unchanged.</p>
-        </div>
+        <section class="prose-card" id="apple-intelligence">
+            <h2>Apple Intelligence</h2>
+            <p>Workout summaries and the “While you were away” recap can be written by Apple Intelligence. This uses Apple’s on-device language model, so nothing is sent to Apple or anyone else to write them.</p>
+        </section>
 
-        <div class="policy-card contact-section">
-            <p>If you have any questions about this Privacy Policy, <a href="support.html">please contact us</a>.</p>
-        </div>
-    </div>
+        <section class="prose-card" id="crash-reports">
+            <h2>Crash reports and statistics</h2>
+            <p>The app contains no analytics or tracking code. If you’ve chosen to share analytics with app developers in your device’s settings, Apple may give me anonymous crash reports and usage statistics. They don’t identify you, and you can turn this off at any time in Settings → Privacy &amp; Security → Analytics &amp; Improvements.</p>
+        </section>
+
+        <section class="prose-card" id="website">
+            <h2>This website</h2>
+            <p>This website doesn’t use cookies or analytics. It’s hosted on GitHub Pages, which processes your IP address to deliver the pages (see <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener noreferrer">GitHub’s privacy statement</a>). Everything else, fonts included, comes from this site itself; no other service is involved.</p>
+        </section>
+
+        <section class="prose-card" id="changes">
+            <h2>Changes to this policy</h2>
+            <p>If the way Personal Bests handles data changes, I’ll update this page and the date at the top.</p>
+        </section>
+
+        <section class="prose-card" id="responsible">
+            <h2>Who’s responsible</h2>
+            <p>Personal Bests is made by Markus Kettner, an independent developer. Because the app never sends your data to me, there’s nothing I could look up, export or delete for you: everything lives on your devices and in your own iCloud, where you can delete it at any time (see <a href="#icloud">iCloud sync and backup</a>).</p>
+        </section>
+    </main>
+
+    <footer class="wrap site-footer">
+        <a href="privacy_policy.html" class="footer-link">Privacy Policy</a>
+        <a href="support.html" class="footer-link">Contact / Support</a>
+        <span class="copyright">© <script>document.write(new Date().getFullYear())</script> Markus Kettner</span>
+    </footer>
 </body>
 
 </html>

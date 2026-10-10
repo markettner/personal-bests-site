@@ -5,173 +5,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Support - Personal Bests</title>
-    <meta name="description" content="Support information for Personal Bests app.">
+    <meta name="description" content="Support information for the Personal Bests app.">
+
     <link rel="icon" type="image/png" href="icon.png">
     <link rel="apple-touch-icon" href="icon.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Lexend', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-            min-height: 100vh;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-            color: #ffffff;
-            padding: 2rem;
-            line-height: 1.7;
-        }
-
-        .container {
-            max-width: 700px;
-            margin: 0 auto;
-            animation: fadeIn 0.8s ease-out;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: rgba(255, 255, 255, 0.7);
-            text-decoration: none;
-            font-size: 0.95rem;
-            margin-bottom: 2rem;
-            padding: 0.5rem 1rem;
-            border-radius: 8px;
-            transition: all 0.2s ease;
-            border: 1px solid transparent;
-        }
-
-        .back-link:hover {
-            color: #ffffff;
-            background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(255, 255, 255, 0.2);
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 2rem;
-            background: linear-gradient(135deg, #ffd700 0%, #ff6b6b 50%, #ee5a24 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .support-card {
-            background: rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(10px);
-            border-radius: 16px;
-            padding: 2rem;
-            margin-bottom: 1.5rem;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            text-align: center;
-        }
-
-        .support-card .icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .support-card h2 {
-            font-size: 1.4rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: #ffd700;
-        }
-
-        .support-card p {
-            color: rgba(255, 255, 255, 0.85);
-            margin-bottom: 1rem;
-            font-size: 1.05rem;
-        }
-
-        .support-card p:last-child {
-            margin-bottom: 0;
-        }
-
-        .highlight-box {
-            background: linear-gradient(135deg, rgba(100, 149, 237, 0.2) 0%, rgba(65, 105, 225, 0.2) 100%);
-            border: 1px solid rgba(100, 149, 237, 0.3);
-            border-radius: 12px;
-            padding: 1.5rem;
-            margin-top: 1.5rem;
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-            text-align: left;
-        }
-
-        .highlight-box .icon {
-            font-size: 2rem;
-            flex-shrink: 0;
-            margin-bottom: 0;
-        }
-
-        .highlight-box .content h3 {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: #6495ed;
-        }
-
-        .highlight-box .content p {
-            color: rgba(255, 255, 255, 0.85);
-            margin: 0;
-            font-size: 1rem;
-        }
-
-        .thank-you {
-            margin-top: 2rem;
-            color: rgba(255, 255, 255, 0.6);
-            font-size: 0.95rem;
-        }
-    </style>
+    <link rel="preload" href="fonts/lexend-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <div class="container">
-        <a href="index.html" class="back-link">← Back to Home</a>
+    <header class="wrap site-header">
+        <a href="index.html" class="brand">
+            <img src="icon.png" alt="" width="40" height="40">
+            Personal Bests
+        </a>
+        <nav class="site-nav" aria-label="Main">
+            <a href="index.html">Overview</a>
+            <a href="features.html">Features</a>
+            <a href="support.html" aria-current="page">Support</a>
+            <a href="https://apps.apple.com/us/app/personal-bests/id6756506641" class="nav-cta" target="_blank" rel="noopener noreferrer">Get the app</a>
+        </nav>
+    </header>
 
-        <h1>Support</h1>
+    <main class="wrap-narrow text-page">
+        <header class="text-header">
+            <div class="kicker">Support</div>
+            <h1>Tell me what you <span class="gradient-text nowrap">think.</span></h1>
+            <p class="lead">Personal Bests is a passion project by an independent developer. I can’t offer one-to-one support, but I genuinely value your feedback.</p>
+        </header>
 
-        <div class="support-card">
-            <div class="icon">💬</div>
-            <h2>We'd Love to Hear From You</h2>
-            <p>Personal Bests is developed as a passion project by an independent developer. While I'm unable to offer
-                personalized one-on-one support, I genuinely value your feedback!</p>
-            <p>If you have suggestions, feature requests, or run into any issues, please leave a review on the App
-                Store. I read every single review and use your feedback to improve the app.</p>
+        <section class="prose-card" id="review">
+            <h2>Leave a review</h2>
+            <p>Suggestions, feature requests, or something not working the way it should? Please leave a review on the App Store. I read every single one, and your feedback shapes what comes next in Personal Bests.</p>
+            <a href="https://apps.apple.com/app/id6756506641?action=write-review" class="btn btn-glass" target="_blank" rel="noopener noreferrer">
+                Write a review
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffd700" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+        </section>
 
-            <div class="highlight-box">
-                <div class="icon">⭐</div>
-                <div class="content">
-                    <h3>Leave a Review</h3>
-                    <p>Your App Store reviews help shape the future of Personal Bests. Every piece of feedback is
-                        appreciated and carefully considered for future updates.</p>
-                </div>
-            </div>
-        </div>
+        <section class="prose-card" id="privacy">
+            <h2>Your data</h2>
+            <p>Personal Bests has no accounts and no servers, so there’s nothing to sign out of or request from me. How the app handles your workouts, and how to remove your data from iCloud, is explained in the <a href="privacy_policy.html">Privacy Policy</a>.</p>
+        </section>
 
-        <p class="thank-you">Thank you for using Personal Bests! 🏆</p>
-    </div>
+        <p class="text-meta">Thank you for using Personal Bests!</p>
+    </main>
+
+    <footer class="wrap site-footer">
+        <a href="privacy_policy.html" class="footer-link">Privacy Policy</a>
+        <a href="support.html" class="footer-link">Contact / Support</a>
+        <span class="copyright">© <script>document.write(new Date().getFullYear())</script> Markus Kettner</span>
+    </footer>
 </body>
 
 </html>
