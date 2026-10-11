@@ -82,6 +82,7 @@ p, li { text-wrap: pretty; }
 .site-nav a { color: var(--text-3); text-decoration: none; padding: 12px 14px; border-radius: 50px; border: 1px solid transparent; }
 .site-nav a:hover { color: var(--text); }
 .site-nav a[aria-current="page"] { color: var(--text); background: var(--glass-strong); border-color: var(--line-strong); }
+.nav-pages { display: contents; }
 .site-nav .nav-cta { margin-left: 8px; color: var(--navy-1); background: #ffffff; font-weight: 600; padding: 12px 20px; }
 .site-nav .nav-cta:hover { color: var(--navy-1); opacity: 0.9; }
 
@@ -305,6 +306,16 @@ a.eyebrow-pill:hover { color: var(--gold); background: rgba(255, 215, 0, 0.14); 
 .site-footer .copyright { flex-basis: 100%; text-align: center; }
 
 @media (max-width: 600px) {
+    /* The four nav items don't fit one phone-width line, and wrapping left "Get the app" alone
+       on a second row. Instead the CTA joins the brand, and the three page links get the row
+       below to themselves, in equal thirds. Sizes ease down so it all still fits at 320px. */
+    .site-header { display: grid; grid-template-columns: 1fr auto; gap: 14px 12px; padding-bottom: 8px; }
+    .brand { font-size: clamp(16px, 4.8vw, 18px); }
+    .site-nav { display: contents; font-size: clamp(14px, 4vw, 15px); }
+    .site-nav .nav-cta { grid-area: 1 / 2; margin-left: 0; padding: 12px clamp(14px, 4.5vw, 20px); white-space: nowrap; }
+    .nav-pages { grid-area: 2 / 1 / 3 / -1; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4px; }
+    .nav-pages a { justify-self: center; padding: 10px clamp(8px, 3vw, 14px); white-space: nowrap; }
+
     /* Below ~375px the desktop minimums leave a single word on its own line
        ("Your", "for"); scaling with the viewport keeps the phone line breaks down to 320px. */
     .hero h1 { font-size: clamp(40px, 12.8vw, 48px); }
