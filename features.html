@@ -61,6 +61,7 @@
                 <a href="#recap" class="pill">Recap</a>
                 <a href="#notify" class="pill">Stay on top</a>
                 <a href="#devices" class="pill">Devices</a>
+                <a href="#themes" class="pill">Themes</a>
                 <a href="#all" class="pill">All features</a>
             </nav>
         </section>
@@ -200,6 +201,42 @@
                     <div class="shot device-frame iphone framed" data-panel="iphone"><img src="screenshots/iphone-workouts-shadow.webp" alt="Personal Bests on iPhone: the workout list"></div>
                     <div class="shot device-frame ipad framed" data-panel="ipad" hidden><img src="screenshots/ipad-workouts-shadow.webp" alt="Personal Bests on iPad: the workout list beside a workout’s segments"></div>
                     <div class="shot device-frame mac framed" data-panel="mac" hidden><img src="screenshots/mac-workouts-shadow.webp" alt="Personal Bests on Mac: the workout list beside a workout’s segments"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="wrap devices themes" id="themes" data-theme="orange" aria-labelledby="themes-title">
+            <div class="devices-panel">
+                <div class="devices-copy">
+                    <h2 id="themes-title">Make it <span class="gradient-text">yours</span></h2>
+                    <p>Three themes, each tuned for light and dark mode. Pick one on your iPhone, and your iPad and Mac follow along. There are three app icons to choose from, too.</p>
+                    <div class="theme-pickers">
+                        <div>
+                            <span class="picker-label" id="theme-picker-label">Theme</span>
+                            <div class="segmented theme-choice" role="group" aria-labelledby="theme-picker-label">
+                                <button type="button" data-theme="system" aria-pressed="false"><span class="swatch" style="--sw-light: #007aff; --sw-dark: #0a84ff" aria-hidden="true"></span>Default</button>
+                                <button type="button" data-theme="orange" aria-pressed="true"><span class="swatch" style="--sw-light: #f25925; --sw-dark: #ff9a29" aria-hidden="true"></span>Red &amp; Orange</button>
+                                <button type="button" data-theme="blueyellow" aria-pressed="false"><span class="swatch" style="--sw-light: #0f3460; --sw-dark: #f8d748" aria-hidden="true"></span>Blue &amp; Yellow</button>
+                            </div>
+                        </div>
+                        <div>
+                            <span class="picker-label" id="appearance-picker-label">Appearance</span>
+                            <div class="segmented" role="group" aria-labelledby="appearance-picker-label">
+                                <button type="button" data-appearance="light" aria-pressed="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>Light</button>
+                                <button type="button" data-appearance="dark" aria-pressed="false"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11z"/></svg>Dark</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="devices-visual">
+                    <div class="shot device-frame iphone framed theme-stack">
+                        <img src="screenshots/iphone-theme-orange-light-shadow.webp" data-theme="orange" data-appearance="light" class="is-active" alt="The workout list in the Red &amp; Orange theme, in light mode">
+                        <img src="screenshots/iphone-theme-orange-dark-shadow.webp" data-theme="orange" data-appearance="dark" loading="lazy" aria-hidden="true" alt="The workout list in the Red &amp; Orange theme, in dark mode">
+                        <img src="screenshots/iphone-theme-system-light-shadow.webp" data-theme="system" data-appearance="light" loading="lazy" aria-hidden="true" alt="The workout list in the Default theme, in light mode">
+                        <img src="screenshots/iphone-theme-system-dark-shadow.webp" data-theme="system" data-appearance="dark" loading="lazy" aria-hidden="true" alt="The workout list in the Default theme, in dark mode">
+                        <img src="screenshots/iphone-theme-blueyellow-light-shadow.webp" data-theme="blueyellow" data-appearance="light" loading="lazy" aria-hidden="true" alt="The workout list in the Blue &amp; Yellow theme, in light mode">
+                        <img src="screenshots/iphone-theme-blueyellow-dark-shadow.webp" data-theme="blueyellow" data-appearance="dark" loading="lazy" aria-hidden="true" alt="The workout list in the Blue &amp; Yellow theme, in dark mode">
+                    </div>
                 </div>
             </div>
         </section>
@@ -377,6 +414,42 @@
                     panels.forEach(function (p) { p.hidden = p.getAttribute('data-panel') !== device; });
                 });
             });
+        })();
+
+        // Themes matrix: two independent pickers, theme and appearance. Each changes only its own
+        // axis; the phone shows the one screenshot that matches both. Starts in the visitor's
+        // own appearance.
+        (function () {
+            var section = document.getElementById('themes');
+            var images = section.querySelectorAll('.theme-stack img');
+            var state = {
+                theme: section.getAttribute('data-theme'),
+                appearance: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+            };
+            function render() {
+                section.setAttribute('data-theme', state.theme);
+                ['theme', 'appearance'].forEach(function (axis) {
+                    section.querySelectorAll('button[data-' + axis + ']').forEach(function (b) {
+                        b.setAttribute('aria-pressed', String(b.getAttribute('data-' + axis) === state[axis]));
+                    });
+                });
+                images.forEach(function (img) {
+                    var active = img.getAttribute('data-theme') === state.theme &&
+                        img.getAttribute('data-appearance') === state.appearance;
+                    img.classList.toggle('is-active', active);
+                    if (active) { img.removeAttribute('aria-hidden'); img.loading = 'eager'; }
+                    else { img.setAttribute('aria-hidden', 'true'); }
+                });
+            }
+            ['theme', 'appearance'].forEach(function (axis) {
+                section.querySelectorAll('button[data-' + axis + ']').forEach(function (btn) {
+                    btn.addEventListener('click', function () {
+                        state[axis] = btn.getAttribute('data-' + axis);
+                        render();
+                    });
+                });
+            });
+            render();
         })();
     </script>
 </body>

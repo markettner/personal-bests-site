@@ -216,7 +216,8 @@ a.eyebrow-pill:hover { color: var(--gold); background: rgba(255, 215, 0, 0.14); 
 .see-all p { font-size: 20px; line-height: 1.6; color: rgba(255, 255, 255, 0.8); margin-bottom: 24px; }
 
 /* ---------- Device switcher ---------- */
-.devices { margin-top: 48px; scroll-margin-top: 16px; }
+/* overflow-x: as on .hero, the phone's baked-in shadow would otherwise widen narrow pages. */
+.devices { margin-top: 48px; scroll-margin-top: 16px; overflow-x: clip; }
 .devices-panel {
     border-radius: 32px; background: var(--glass); border: 1px solid rgba(255, 255, 255, 0.12);
     padding: 56px 40px; display: flex; flex-wrap: wrap; gap: 48px; align-items: center;
@@ -238,6 +239,38 @@ a.eyebrow-pill:hover { color: var(--gold); background: rgba(255, 215, 0, 0.14); 
 .device-frame.iphone { width: 220px; height: 450px; border-radius: 36px; }
 .device-frame.ipad { width: 440px; height: 320px; border-radius: 28px; }
 .device-frame.mac { width: 520px; height: 330px; border-radius: 14px; }
+
+/* ---------- Themes matrix ---------- */
+/* The devices box's sibling, mirrored: phone on the left. Two independent pickers (theme,
+   appearance) pick one of six stacked screenshots, which crossfade in place. */
+.themes { --theme-glow: rgba(255, 107, 107, 0.32); }
+.themes[data-theme="system"] { --theme-glow: rgba(10, 132, 255, 0.32); }
+.themes[data-theme="blueyellow"] { --theme-glow: rgba(248, 215, 72, 0.26); }
+.themes .devices-panel { flex-direction: row-reverse; }
+.theme-pickers { display: flex; flex-direction: column; gap: 20px; }
+.picker-label { display: block; margin-bottom: 10px; font-size: 13px; font-weight: 500; color: var(--text-3); text-transform: uppercase; letter-spacing: 0.1em; }
+.themes .segmented button { display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; }
+.themes .segmented svg { flex: none; }
+/* The theme's light and dark colour as two overlapping dots, like the app's own picker. */
+.swatch { flex: none; position: relative; width: 20px; height: 12px; }
+.swatch::before, .swatch::after {
+    content: ''; position: absolute; top: 0; width: 12px; height: 12px; border-radius: 50%;
+    box-shadow: 0 0 0 1.5px rgba(255, 255, 255, 0.5);
+}
+.swatch::before { left: 0; background: var(--sw-light); }
+.swatch::after { left: 8px; background: var(--sw-dark); }
+.segmented button[aria-pressed="true"] .swatch::before,
+.segmented button[aria-pressed="true"] .swatch::after { box-shadow: 0 0 0 1.5px #ffffff; }
+.themes .devices-visual { position: relative; }
+.themes .devices-visual::before {
+    content: ''; position: absolute; width: 360px; height: 360px; max-width: 100%;
+    top: 50%; left: 50%; transform: translate(-50%, -50%);
+    /* closest-side: fully faded at the box's edge even when max-width squeezes it on phones. */
+    background: radial-gradient(circle closest-side, var(--theme-glow) 0%, rgba(15, 52, 96, 0) 100%);
+}
+.theme-stack { display: grid; position: relative; }
+.theme-stack img { grid-area: 1 / 1; opacity: 0; transition: opacity 0.3s ease; }
+.theme-stack img.is-active { opacity: 1; }
 [hidden] { display: none !important; }
 
 /* ---------- All features grid ---------- */
@@ -325,6 +358,18 @@ a.eyebrow-pill:hover { color: var(--gold); background: rgba(255, 215, 0, 0.14); 
     .spot .shot { height: 360px; }
     .spot .shot.peek { --w-max: 80%; }
     .devices-panel { padding: 32px 20px; }
+    /* Three themes don't fit one phone-width row; a stacked list reads better than a pill
+       that wraps one button onto a line of its own. */
+    .segmented.theme-choice { display: flex; flex-direction: column; align-items: stretch; border-radius: 28px; }
+    /* Phone between the copy and the pickers, so a tap changes something still on screen. */
+    .themes .devices-panel { flex-direction: column; align-items: stretch; gap: 0; }
+    .themes .devices-copy { display: contents; }
+    .themes .devices-visual { order: 1; flex: none; min-height: 0; margin-bottom: 28px; }
+    .themes .theme-pickers { order: 2; gap: 12px; }
+    .themes .device-frame.iphone { width: 170px; }
+    /* The swatches and sun/moon say it; screen readers still get the labels. */
+    .themes .picker-label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+    .segmented.theme-choice button { min-height: 44px; padding-top: 8px; padding-bottom: 8px; }
     .prose-card { padding: 24px 20px; border-radius: 20px; }
     .text-header h1 { font-size: clamp(32px, 9.6vw, 40px); }
     .phone { width: 260px; height: 540px; }
@@ -332,5 +377,5 @@ a.eyebrow-pill:hover { color: var(--gold); background: rgba(255, 215, 0, 0.14); 
 
 @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
-    .btn, .app-store-badge { transition: none; }
+    .btn, .app-store-badge, .theme-stack img { transition: none; }
 }
